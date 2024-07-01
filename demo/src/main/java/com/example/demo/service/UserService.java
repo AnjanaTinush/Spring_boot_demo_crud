@@ -43,4 +43,9 @@ public class UserService {
         return "User deleted";
     }
 
+    public String deleteUser_u(Integer userId){
+        userRepo.deleteById(userId);
+        return "User deleted";
+    }
+
 }
