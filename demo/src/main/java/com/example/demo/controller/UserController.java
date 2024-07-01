@@ -31,4 +31,9 @@ public class UserController {
     public UserDTo updateuser(@RequestBody UserDTo userDTo){
         return userService.updateUser(userDTo);
     }
+
+    @DeleteMapping("/deleteuser")
+    public String deleteuser(@RequestBody UserDTo userDTo){
+        return userService.deleteUser(userDTo);
+    }
 }
