@@ -28,6 +28,11 @@ public class UserService {
         return modelMapper.map(userList,new TypeToken<List<UserDTo>>(){}.getType());
     }
 
+    public UserDTo getUserById(Integer userId){
+        User user = userRepo.getUserById(userId);
+        return modelMapper.map(user,UserDTo.class);
+    }
+
     public UserDTo saveUser(UserDTo userDTo){
         userRepo.save(modelMapper.map(userDTo,User.class));
         return userDTo;
